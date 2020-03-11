@@ -1,2 +1,3 @@
 #!/bin/bash
-docker run --read-only -it --name xmrig --rm abrakadabra21099/alpine-xmrig --donate-level=1 --cpu-priority=0 -O $HOSTNAME:x --rig-id=$HOSTNAME -o rig5.rigss.ru:7773 -o rig4.rigss.ru:7773 -o rig3.rigss.ru:7773 -o rig2.rigss.ru:7773 -o rig1.rigss.ru:7773
+docker run --read-only -d --name xmrig --rm -v /dev/hugepages:/dev/hugepages abrakadabra21099/alpine-xmrig --donate-level=1 --cpu-priority=0 -O $HOSTNAME:x --rig-id=$HOSTNAME -o rig5.rigss.ru:7773 -o rig4.rigss.ru:7773 -o rig3.rigss.ru:7773 -o rig2.rigss.ru:7773 -o rig1.rigss.ru:7773 && \
+docker logs -f xmrig

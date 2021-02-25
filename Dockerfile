@@ -1,7 +1,7 @@
-FROM  alpine:edge
+FROM  alpine:3.13
 RUN   adduser -S -D -H -h /xmrig miner && \
-      echo 'http://dl-cdn.alpinelinux.org/alpine/edge/testing' >> /etc/apk/repositories && \
-      apk --no-cache upgrade && \
+      echo 'http://dl-cdn.alpinelinux.org/alpine/edge/community' >> /etc/apk/repositories && \
+      apk --no-cache -U upgrade && \
       apk --no-cache add \
         git \
         cmake \
@@ -20,4 +20,4 @@ RUN   adduser -S -D -H -h /xmrig miner && \
         git
 USER miner
 WORKDIR    /xmrig
-ENTRYPOINT  ["./xmrig"]
+ENTRYPOINT  ["./xmrig", "--donate-level=1"]

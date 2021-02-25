@@ -1,3 +1,3 @@
 #!/bin/bash
-docker build -t abrakadabra21099/alpine-xmrig -t abrakadabra21099/alpine-xmrig:5.9.0 . && \
-docker push abrakadabra21099/alpine-xmrig && docker push abrakadabra21099/alpine-xmrig:5.9.0
+docker build -t abrakadabra21099/alpine-xmrig -t abrakadabra21099/alpine-xmrig:6.9.0 . && \
+docker push abrakadabra21099/alpine-xmrig && docker push abrakadabra21099/alpine-xmrig:6.9.0
